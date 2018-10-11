@@ -15,7 +15,10 @@ We aim to build a webapp that would completely automate the process of uniting p
 * An interface to upload images of missing and the found people.
 * These images would be then sent to the backend server where search would be done using one shot learning.
 * The information about found people are sent to their loved ones along with their location in the form of email or message. 
-
+## Dataset and Technology 
+* We would use public data set like MS Celeb to train our network.
+* We would use one shot learning using siamese network to compare the images in both the databases.<br>
+![alt WORKFLOW](https://github.com/adityauser/Milan/blob/master/Images/Architecture.jpeg)
 ## Advantages
 * There would be better cordination between the rescue ops and the families which would save a lot of time,resources and manpower which could be used elsewhere during the time of the calamity.
 * This approach would provide a general platform for storing the data of missing and found and would help the NGO's and the government agencies to plan the necessary actions in an efficient way.
