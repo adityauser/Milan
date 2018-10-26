@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -31,8 +32,8 @@ ALLOWED_HOSTS = []
 # Email Credentials
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = "pshravan.nayak.ece17@itbhu.ac.in"
-EMAIL_HOST_PASSWORD = "Qwerty@409"
+EMAIL_HOST_USER = "milanresponse@gmail.com"
+EMAIL_HOST_PASSWORD = "shravan@409"
 EMAIL_PORT = 587
 
 
@@ -48,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gdstorage',
 ]
 
 MIDDLEWARE = [

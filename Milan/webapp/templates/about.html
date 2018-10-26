@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>About us</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+    <link href="{% static 'css/grayscale.min.css' %}" rel="stylesheet">
+		
+	</head>
+	<body class="landing">
+
+		<!-- Navigation -->
+   		{% include "navigation.html" %}
+
+		<!-- Banner -->
+			<section id="banner">
+				
+				<h2>Milan</h2>
+				<p>Reuniting People</p>
+				<ul class="actions">
+					<li><a href="#bottom" class="button big special">Get in touch</a></li>
+				</ul>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<div class="inner">
+					<article class="feature left">
+						<span class="image"><img src="/static/images/hand.jpg" height="350" width ="500" alt="" /></span>
+						<div class="content">
+							<h2>What we do and why?</h2>
+							<p>When a calamity strikes people get separated from their families,several people get injured and unfortunately lot of lives are lost.The whereabouts of many of these people especially the kids, injured and the dead are not known and a lot of manpower and resources goes into uniting these people with their families.There is also a growing concern on the side of the family of these people as they do not have a clear idea as to where and how to look for their loved ones.Milan is a project that tries to solve this problem.</p>
+						</div>
+					</article>
+					<article class="feature right">
+						<span class="image"><img src="/static/images/face.jpg" height="350" alt="" /></span>
+						<div class="content">
+							<h2>How we do it?</h2>
+							<p>The webapp would completely automate the process of uniting people. On one side we would maintain a database which would comprise of photos of people who are missing which would be uploaded by their loved ones along with their basic details. On the other side we would maintain another database which would comprise photos of people who are found either by rescue operations or in relief camps who are unable to communicate especially the dead,injured and the children. Then we would search both the databases and find matching faces and the information of these people are sent to their loved ones. We use microsoft azure's state of the art cognitive serives(face api) to find matching faces in both the database. </p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper special">
+				<div class="inner">
+					<header >
+						<h2>We cannot stop natural disasters but we aim to reduce the emotional loss and restore hope in people during these difficult times</h2>
+						
+					</header>
+					<div class="image-grid">
+						<a href="#" class="image"><img src="/static/images/2.jpeg" height="200" width="42" alt="" /></a>
+						<a href="#" class="image"><img src="/static/images/3.jpeg" height="200" width="42" alt="" /></a>
+						<a href="#" class="image"><img src="/static/images/4.jpeg" height="200" width="42" alt="" /></a>
+						<a href="#" class="image"><img src="/static/images/5.jpeg" height="200" width="42" alt="" /></a>
+						
+					</div>
+					<!--<ul class="actions">
+						<li><a href="#" class="button big alt">Tempus Aliquam</a></li>
+					</ul> -->
+				</div>
+			</section>
+
+		<!-- Three 
+			<section id="three" class="wrapper style3 special">
+				<div class="inner">
+					<header class="major narrow	">
+						<h2>Magna sed consequat tempus</h2>
+						<p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
+					</header>
+					<ul class="actions">
+						<li><a href="#" class="button big alt">Magna feugiat</a></li>
+					</ul>
+				</div>
+			</section>-->
+
+		<!-- Four -->
+			<section id="four" class="wrapper style2 special">
+				<div class="inner">
+					<a name="bottom"></a>
+					<header class="major narrow">
+						<h2>Get in touch</h2>
+						<p>Give us your queries and feedback</p>
+					</header>
+					<form action="" method="POST" enctype="multipart/form-data" action="">
+						{% csrf_token %}
+						<div class="container 75%">
+							<div class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<input name="name" placeholder="Name" type="text" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input name="email" placeholder="Email" type="email" />
+								</div>
+								<div class="12u$">
+									<textarea name="message" placeholder="Message" rows="4"></textarea>
+								</div>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" class="special" value="Submit" /></li>
+							<li><input type="reset" class="alt" value="Reset" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
+
+		<!-- Footer
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook">
+							<span class="label">Facebook</span>
+						</a></li>
+						<li><a href="#" class="icon fa-twitter">
+							<span class="label">Twitter</span>
+						</a></li>
+						<li><a href="#" class="icon fa-instagram">
+							<span class="label">Instagram</span>
+						</a></li>
+						<li><a href="#" class="icon fa-linkedin">
+							<span class="label">LinkedIn</span>
+						</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled.</li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a>.</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a>.</li>
+					</ul>
+				</div>
+			</footer> -->
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'assets/js/main.js' %}"></script>
+			<!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'js/grayscale.min.js' %}"></script>
+
+	</body>
+</html>

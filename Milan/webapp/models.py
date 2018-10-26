@@ -1,8 +1,5 @@
 from django.db import models
-from gdstorage.storage import GoogleDriveStorage, GoogleDrivePermissionType, GoogleDrivePermissionRole, GoogleDriveFilePermission
 
-# Define Google Drive Storage
-gd_storage = GoogleDriveStorage()
 
 
 
@@ -11,14 +8,39 @@ def path(instance, filename):
 
 
 class Lost(models.Model):
-	Photo = models.ImageField()
+	Photo = models.FileField(upload_to='media')
 	person_name = models.CharField(max_length=500)
 	provider_email = models.EmailField(max_length=500)
 	provider_name = models.CharField(max_length=500)
+	provider_number = models.CharField(max_length=10)
+	#person_id = models.CharField(max_length=200)
+	
 
 class Found(models.Model):
-	Photo = models.ImageField()
+	Photo = models.FileField(upload_to='media', null=True, blank=True)
 	location = models.CharField(max_length=500)
 	condition = models.CharField(max_length=500)
 	provider_name = models.CharField(max_length=500)
 	provider_email = models.CharField(max_length=500)
+	provider_number = models.CharField(max_length=10)
+	#person_id = models.CharField(max_length=200)
+
+class idlost(models.Model):
+	link = models.OneToOneField(
+	    Lost,
+	    on_delete=models.CASCADE,
+	    primary_key=True,
+	)
+	person_id = models.CharField(max_length=200)
+
+class idfound(models.Model):
+	link = models.OneToOneField(
+	    Found,
+	    on_delete=models.CASCADE,
+	    primary_key=True,
+	)
+	person_id = models.CharField(max_length=200)
+
+
+
+

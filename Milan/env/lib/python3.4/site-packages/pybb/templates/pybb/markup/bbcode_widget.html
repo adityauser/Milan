@@ -1,0 +1,58 @@
+{% load i18n %}
+
+{{ widget_output }}
+
+<script type="text/javascript">
+if(!window.pybb){
+    window.pybb = {};
+}
+if(!window.pybb.get_markitup_settings){
+    window.pybb.get_markitup_settings = function() {
+        var mySettings = new Array();
+        mySettings['previewParserPath'] = '{% url 'pybb:post_ajax_preview' %}';
+        mySettings['previewPosition'] = 'before';
+        mySettings['resizeHandle'] = true;
+        mySettings['markupSet'] = [
+            {name:'{% trans "Bold" as txt %}{{ txt|escapejs }}', key:'B', openWith:'[b]', closeWith:'[/b]'},
+            {name:'{% trans "Italic" as txt %}{{ txt|escapejs }}', key:'I', openWith:'[i]', closeWith:'[/i]'},
+            {name:'{% trans "Underline" as txt %}{{ txt|escapejs }}', key:'U', openWith:'[u]', closeWith:'[/u]'},
+            {name:'{% trans "Stroke" as txt %}{{ txt|escapejs }}', key:'S', openWith:'[s]', closeWith:'[/s]'},
+            {separator:'---------------' },
+            {name:'{% trans "Picture" as txt %}{{ txt|escapejs }}', key:'P', replaceWith:'[img][![Url]!][/img]'},
+            {name:'{% trans "Link" as txt %}{{ txt|escapejs }}', key:'L', openWith:'[url=[![Url]!]]', closeWith:'[/url]', placeHolder:'{% trans 'Your text to link here...' %}'},
+            {separator:'---------------' },
+            {name:'{% trans "Bulleted list" as txt %}{{ txt|escapejs }}', openWith:'[list]\n', closeWith:'\n[/list]'},
+            {name:'{% trans "Numeric list" as txt %}{{ txt|escapejs }}', openWith:'[list=[![Starting number]!]]\n', closeWith:'\n[/list]'},
+            {name:'{% trans "List item" as txt %}{{ txt|escapejs }}', openWith:'[*] '},
+            {separator:'---------------' },
+            {name:'{% trans "Quotes" as txt %}{{ txt|escapejs }}', openWith:'[quote]', closeWith:'[/quote]'},
+            {name:'{% trans "Code" as txt %}{{ txt|escapejs }}', openWith:'[code]', closeWith:'[/code]'},
+            {separator:'---------------' },
+            {name:'{% trans "Clean" as txt %}{{ txt|escapejs }}', className:"clean", replaceWith:function(markitup) { return markitup.selection.replace(/\[(.*?)\]/g, "") } },
+            {name:'{% trans "Preview" as txt %}{{ txt|escapejs }}', className:"preview", call:'preview' }
+        ];
+        return mySettings ;
+    };
+    window.pybb.insert_image = function(url){
+        $.markItUp({replaceWith: '[img]'+url+'[/img]'});
+    }
+    window.pybb.insert_link = function(url, name){
+        $.markItUp({replaceWith: '[url='+url+']'+name+'[/url]'});
+    }
+}
+
+if (!window.pybb.markup) {
+    /*
+     This object will be used to perform some action specific to the current Markup engine.
+     eg : quote button, SHIT + click on an username, etc.
+     */
+    window.pybb.markup = {
+        quote: function (text, username) {
+            return '[quote' + (username ? ('="' + username + '"') : '') + ']' + text + '[/quote]\n';
+        },
+        username: function (username) {
+            return '[b]' + username + '[/b], ';
+        }
+    }
+}
+</script>

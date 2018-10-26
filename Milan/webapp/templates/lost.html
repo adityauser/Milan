@@ -1,18 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Lost Form</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/cs-select.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/cs-skin-boxes.css' %}" />
+		<script src="/static/js/modernizr.custom.js"></script>
 	</head>
 	<body>
-		<p>Please Enter the details</p>
-		<div>
-			<form method ="post" action="" enctype="multipart/form-data">
-				{% csrf_token %}
-				{{ form.as_p }}
-				<button type ="submit">Submit</button>
-			</form>
-		</div>
+		<div class="container">
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1>Lost Form</h1>
+				</div>
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" enctype="multipart/form-data" action="">
+					{% csrf_token %}
+					<ol class="fs-fields">
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">Photo of the lost?</label>
+							<input class="fs-anim-lower" id="q1" name="Photo" type="file" accept="image/*" value="upload"  required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">Name of the Lost?</label>
+							<input class="fs-anim-lower" id="q1" name="person_name" type="text"  placeholder="Rohit" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your email address?</label>
+							<input class="fs-anim-lower" id="q2" name="provider_email" type="email"  placeholder="rahul@gmail.com" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" >What's your name?</label>
+							<input class="fs-anim-lower" id="q2" name="provider_name" type="text"  placeholder="Rahul" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="This wont be shared, we promise...">What's your contact number?</label>
+							<input class="fs-anim-lower" id="q2" name="provider_number" type="number"  placeholder="8123457783" required/>
+						</li>
+						
+					</ol><!-- /fs-fields -->
+					<button class="fs-submit" type="submit">Submit</button>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+		
+
+		</div><!-- /container -->
+		<script src="/static/js/classie.js"></script>
+		<script src="/static/js/selectFx.js"></script>
+		<script src="/static/js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
 	</body>
 </html>

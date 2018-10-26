@@ -1,0 +1,17 @@
+django==2
+django-annoying==0.10.4
+django-appconf==1.0.2
+django-bootstrap-form==3.4
+django-user-accounts==2.0.3
+gunicorn==19.8.1
+Markdown==2.6.11
+Pillow==5.1.0
+pinax-theme-bootstrap==8.0.1
+pybbm==0.19.0
+pytz==2018.4
+requests==2.19.1
+sorl-thumbnail==12.4.1
+sqlparse==0.2.4
+Unidecode==1.0.22
+whitenoise==3.3.1
+cognitive-face
