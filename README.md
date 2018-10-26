@@ -27,5 +27,9 @@ We aim to build a webapp that would completely automate the process of uniting p
 ## Edit
 We have used microsoft's state of the art cognitive servies **(face api)** instead of implementing our own model but the underlying ideas are the same.<br>
 
+## Backend and API flow
+
+![alt WORKFLOW](https://github.com/adityauser/Milan/blob/master/Images/API_flow_chart.jpg)
+
 
 
