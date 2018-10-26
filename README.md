@@ -1,5 +1,6 @@
 # Milan
-WebApp for Code.fun.do++ by Team Sunami
+WebApp for Code.fun.do++ by Team Sunami<br>
+**The url of the site is:  <a href="http://139.59.85.220/">Milan</a>**
 
 ## Team Members
 
@@ -25,6 +26,6 @@ We aim to build a webapp that would completely automate the process of uniting p
 
 ## Edit
 We have used microsoft's state of the art cognitive servies **(face api)** instead of implementing our own model but the underlying ideas are the same.<br>
-**The url of the site is:  <a href="http://139.59.85.220/">Milan</a>**
+
 
 
