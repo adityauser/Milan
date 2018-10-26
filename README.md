@@ -21,4 +21,10 @@ We aim to build a webapp that would completely automate the process of uniting p
 ![alt WORKFLOW](https://github.com/adityauser/Milan/blob/master/Images/Architecture.jpeg)
 ## Advantages
 * There would be better cordination between the rescue ops and the families which would save a lot of time,resources and manpower which could be used elsewhere during the time of the calamity.
-* This approach would provide a general platform for storing the data of missing and found and would help the NGO's and the government agencies to plan the necessary actions in an efficient way.
+* This approach would provide a general platform for storing the data of missing and found and would help the NGO's and the government agencies to plan the necessary actions in an efficient way.<br>
+
+## Edit
+We have used microsoft's state of the art cognitive servies **(face api)** instead of implementing our own model but the underlying ideas are the same.<br>
+**The url of the site is:  <a href="http://139.59.85.220/">Milan</a>**
+
+
